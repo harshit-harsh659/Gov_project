@@ -18,7 +18,7 @@ services:
       - key: DJANGO_SECRET_KEY
         generateValue: true
       - key: DJANGO_DEBUG
-        value: 'False'
+        value: 'True'
 
   - type: web
     name: secura-frontend
