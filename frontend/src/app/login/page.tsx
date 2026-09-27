@@ -5,6 +5,7 @@ import { useAuth } from "@/context/AuthContext";
 import { ShieldCheck, Lock, AlertOctagon, User, Eye, Users, Hexagon, Search, Link2, Scale, Database } from "lucide-react";
 import { motion } from "framer-motion";
 import { SecureBackground3D } from "@/components/SecureBackground3D";
+import Link from "next/link";
 
 export default function LoginPage() {
   const { login } = useAuth();
@@ -54,9 +55,11 @@ export default function LoginPage() {
           <div className="max-w-[420px] mx-auto md:mx-0 w-full relative z-10 flex flex-col items-center md:items-start text-center md:text-left mt-10">
             
             <div className="mb-10 w-full flex flex-col items-center md:items-start text-center md:text-left">
-              <h1 className="text-5xl md:text-6xl font-bold tracking-widest mb-6 bg-gradient-to-r from-white via-white to-[#2dd4bf] bg-clip-text text-transparent drop-shadow-sm">
-                SECURA
-              </h1>
+              <Link href="/">
+                <h1 className="text-5xl md:text-6xl font-bold tracking-widest mb-6 bg-gradient-to-r from-white via-white to-[#2dd4bf] bg-clip-text text-transparent drop-shadow-sm hover:opacity-80 transition-opacity cursor-pointer">
+                  SECURA
+                </h1>
+              </Link>
               
               <p className="text-[#14b8a6]/90 italic text-lg leading-relaxed max-w-sm mb-12">
                 "Safeguarding evidentiary integrity from first report to final verdict."

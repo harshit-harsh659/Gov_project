@@ -33,8 +33,12 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
   }, [isLegal]);
 
   useEffect(() => {
-    if (!isLoading && !isAuthenticated && pathname !== "/login") {
-      router.push("/login");
+    if (!isLoading) {
+      if (!isAuthenticated && pathname !== "/login" && pathname !== "/") {
+        router.push("/login");
+      } else if (isAuthenticated && (pathname === "/login" || pathname === "/")) {
+        router.push("/dashboard");
+      }
     }
   }, [isAuthenticated, isLoading, pathname, router]);
 
@@ -48,7 +52,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
   }
 
   if (!isAuthenticated) {
-    if (pathname === "/login") {
+    if (pathname === "/login" || pathname === "/") {
       return (
         <div className="relative min-h-screen bg-background">
           <div className="relative z-10 min-h-screen">
